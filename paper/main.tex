@@ -1,0 +1,23 @@
+\documentclass[10pt, a4paper]{article}
+
+\include{./packages.tex} % include setting for this paper
+\include{./title.tex} % include paper title and header/footer config
+\include{chapters/abbreviations.tex}
+
+\begin{document}
+    \date{\today}
+    \maketitle
+
+    \input{chapters/abstract.tex}
+    \input{chapters/introduction.tex}
+    \input{chapters/summary.tex}
+    \input{chapters/about.tex}
+    
+    \onehalfspacing
+    \printglossary[title={Abbreviations}] %Generate List of Abbreviations
+
+    \input{chapters/conclusion.tex}
+    \input{chapters/acknowledgment.tex}
+
+    {\footnotesize \bibliography{main}}
+\end{document}

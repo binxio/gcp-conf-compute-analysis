@@ -1,0 +1,112 @@
+%----------------------------------------------------------------------------------------
+%   FONTS 
+%----------------------------------------------------------------------------------------
+
+        %% Option 'sfdefault' only if the base font of the document is to be sans serif
+        %% https://tug.org/FontCatalogue/roboto/
+\usepackage[sfdefault]{roboto}  
+\usepackage[T1]{fontenc}
+
+%----------------------------------------------------------------------------------------
+%   CITATIONS 
+%----------------------------------------------------------------------------------------
+%\usepackage{biblatex}
+\usepackage[round]{natbib}   
+\bibliographystyle{apalike}   
+
+%----------------------------------------------------------------------------------------
+% MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+\usepackage{geometry}
+\geometry{
+  paper=a4paper,         % Change to letterpaper for US letter
+  inner=1.5cm,           % Inner margin
+  outer=1.5cm,           % Outer margin
+  bindingoffset=.5cm,    % Binding offset
+  top=1.5cm,             % Top margin
+  bottom=1.5cm,          % Bottom margin
+  includefoot
+}
+
+%----------------------------------------------------------------------------------------
+% PAGE LAYOUT SETTINGS
+%----------------------------------------------------------------------------------------
+    % every new paragraph whiteline and starting at left-align (no tab)
+\usepackage{parskip}
+    % every section on a new page
+\AddToHook{cmd/section/before}{\clearpage} 
+\usepackage{titlesec}
+\usepackage{colorprofiles}
+\usepackage{xcolor}
+    % http://ctan.org/pkg/colortbl
+\usepackage{colortbl}      
+    \definecolor{tranquil_velvet_light}{HTML}{80266C}
+    \definecolor{tranquil_velvet_normal}{HTML}{691E59}
+    \definecolor{tranquil_velvet_dark}{HTML}{4C0241}
+
+    \definecolor{emerald_light}{HTML}{45C1B9}
+    \definecolor{emerald_normal}{HTML}{00A19B}
+    \definecolor{emerald_dark}{HTML}{066F6B}
+
+    \definecolor{dawn_light}{HTML}{BAACD0}
+    \definecolor{dawn_normal}{HTML}{9E8FB6}
+    \definecolor{dawn_dark}{HTML}{736888}
+
+    \definecolor{dusk_light}{HTML}{6F6274}
+    \definecolor{dusk_normal}{HTML}{5F5266}
+    \definecolor{dusk_dark}{HTML}{473C4D}
+
+\usepackage{hyperref}
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=ranquil_velvet_dark,
+        filecolor=ranquil_velvet_dark,
+        urlcolor=ranquil_velvet_dark,
+        anchorcolor=ranquil_velvet_dark,
+        citecolor=ranquil_velvet_dark
+    }
+
+%----------------------------------------------------------------------------------------
+%   TABLE/TEXT SETTINGS
+%----------------------------------------------------------------------------------------
+\usepackage{xurl}        % xurl package for long urls's in bib files
+\usepackage{tabularx}    % tabularx package for advanced table magic
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+    \newcolumntype{L}{>{\arraybackslash}X}
+\usepackage{multirow}
+
+%----------------------------------------------------------------------------------------
+%   LANGUAGE SETTINGS 
+%----------------------------------------------------------------------------------------
+\usepackage[USenglish]{babel} % https://ctan.org/pkg/babel-english?lang=en
+\usepackage{hyphenat}         % https://ctan.org/pkg/hyphenat?lang=en
+
+%----------------------------------------------------------------------------------------
+%   DATE SETTINGS
+%----------------------------------------------------------------------------------------
+\usepackage[yyyymmdd,level]{datetime}
+    \renewcommand{\dateseparator}{-}
+    \newdateformat{usvardate}{%
+        \monthname[\THEMONTH] \ordinaldate{\THEDAY} \THEYEAR}
+    \newdateformat{envardate}{%
+        \shortmonthname[\THEMONTH] \ordinaldate{\THEDAY}, \THEYEAR}
+
+%----------------------------------------------------------------------------------------
+%   HELPER FUNCTIONS
+%----------------------------------------------------------------------------------------
+%%% Custom added packages for including files
+\usepackage{subfiles}
+\usepackage[final]{pdfpages}
+
+\usepackage{graphicx}
+    \graphicspath{ {./images/}, {./Figures/}, {../Figures/}, {./figures/}, {../figures/} }
+\usepackage{rotating}
+\usepackage{mathtools}
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[autostyle=true]{csquotes} 
+\usepackage{lipsum}
+
+\setcounter{tocdepth}{5} %show more in the toc
+
+

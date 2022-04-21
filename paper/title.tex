@@ -1,0 +1,36 @@
+\newcommand{\gcpTitle}{GCP Confidential VM \& Shielded VM}
+\newcommand{\gcpAuthor}{Edzo A. Botjes, Laurens Knoll, Maarten Baijs}
+\newcommand{\gcpKeywords}{zero knowledge, zero trust, confidential compute, shielded vm, amd epyc, secure cloud, devsecops, Zero-Trust, Zero-Knowledge, End-to-End Encryption}
+\newcommand{\gcpResearchTitle}{Decouple GCP from your data (zero-knowledge)}
+
+
+%----------------------------------------------------------------------------------------
+%   HEADER FOOTER
+%----------------------------------------------------------------------------------------
+    \usepackage{lastpage}
+    \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \fancyhead[R]{\envardate\today}
+        \fancyfoot[L]{\footnotesize \ouTitle \ \textcopyright\ CC\ BY-SA\ 4.0}
+        \fancyfoot[R]{Page\ \thepage\ of \pageref*{LastPage}}
+        \renewcommand{\headrulewidth}{1pt}
+        \renewcommand{\footrulewidth}{1pt}
+        \setlength{\headheight}{30pt}
+        
+%%% PDF SETTINGS
+    \hypersetup{
+        pdftitle={\gcpTitle},
+        pdfauthor={\gcpAuthor},
+        pdfkeywords={\gcpKeywords},
+        pdflang={en}
+    }
+
+%%% DOC SETTINGS
+    \title{\headingfont \gcpTitle\\ \ \\ \gcpResearchTitle}
+    %This is the main title of my work.\\ \small And this is the subtitle
+    \author{\gcpAuthor}
+
+
+%%% HEADER SETTINGS
+\fancyhead[L]{\gcpResearchTitle }
