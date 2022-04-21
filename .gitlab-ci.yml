@@ -1,0 +1,55 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+  paths:
+    - .cache/pip
+    - venv/
+    - figures
+
+stages:
+  - figures
+  - build
+  - test
+
+figures:
+  image: python:3.8
+  stage: figures
+  before_script:
+    - python -V               # Print out python version for debugging
+    - pip install virtualenv
+    - virtualenv venv
+    - source venv/bin/activate
+  script:
+    - make -C figures
+  artifacts:
+    untracked: true
+    expire_in: 1 week
+  only:
+    changes:
+      - figures/*
+
+
+compile:
+  image: texlive/texlive:latest
+  stage: build
+  script:
+    - make pdf
+  dependencies:
+    - figures
+  artifacts:
+    untracked: true
+    expire_in: 1 week
+  when: on_success
+
+test:
+  image: ruby:2.7.1
+  stage: test
+  dependencies:
+    - compile
+  script:
+    - bundle install
+    - make check
+  when: on_success

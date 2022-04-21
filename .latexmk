@@ -1,0 +1,5 @@
+$view = 'none';
+$do_cd = 1;
+
+## documentation latexMK
+# http://personal.psu.edu/~jcc8/software/latexmk/latexmk-476.txt
