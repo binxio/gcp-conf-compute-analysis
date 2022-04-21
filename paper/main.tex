@@ -2,7 +2,6 @@
 
 \include{./packages.tex} % include setting for this paper
 \include{./title.tex} % include paper title and header/footer config
-\include{chapters/abbreviations.tex}
 
 \begin{document}
     \date{\today}
@@ -12,12 +11,12 @@
     \input{chapters/introduction.tex}
     \input{chapters/summary.tex}
     \input{chapters/about.tex}
+
+    \input{chapters/abbreviations.tex}
     
-    \onehalfspacing
-    \printglossary[title={Abbreviations}] %Generate List of Abbreviations
 
     \input{chapters/conclusion.tex}
     \input{chapters/acknowledgment.tex}
 
-    {\footnotesize \bibliography{main}}
+    %{\footnotesize \bibliography{main}}
 \end{document}

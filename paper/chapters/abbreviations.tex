@@ -1,142 +1,129 @@
 %!TEX root = ../main.tex
 
-%% http://sandaw89.blogspot.com/2018/04/list-of-abbreviations-latex.html
-%% https://www.overleaf.com/learn/latex/Glossaries
-%% https://en.wikibooks.org/wiki/LaTeX/Glossary
+\section{Abbriviations}
 
-\usepackage[nopostdot,nogroupskip,style=super,nonumberlist,toc,automake,toc]{glossaries} %Load glossaries package
+\begin{tabular}{ ll }
 
-\makeglossaries
+CCKM
+&  
+\textbf{CipherTrust Cloud Key Manager }(Thales)\\
+ & 
+{\footnotesize\url{https://cpl.thalesgroup.com/encryption/key-management/ciphertrust-cloud-key-manager}} 
+\\
 
-\newglossaryentry{CCKM}{
-  name={CCKM},
-  description={
-    \textbf{CipherTrust Cloud Key Manager }(Thales)
-    \url{https://cpl.thalesgroup.com/encryption/key-management/ciphertrust-cloud-key-manager} 
-  }
-}
+DEK
+&
+\textbf{Data Encryption Key}\\
+ & 
+{\footnotesize\url{https://security.stackexchange.com/questions/93886/dek-kek-and-master-key-simple-explanation} }
+\\
 
-\newglossaryentry{DEK}{
-  name={DEK},
-  description={
-    \textbf{Data Encryption Key}
-    \url{https://security.stackexchange.com/questions/93886/dek-kek-and-master-key-simple-explanation} 
-  }
-}
+EKM
+&
+\textbf{External Key Manager} (Google)\\
+ & 
+{\footnotesize\url{https://cloud.google.com/kms/docs/ekm} }
+\\
 
-\newglossaryentry{EKM}{
-name={EKM},
-description={\textbf{External Key Manager} (Google)
-\url{https://cloud.google.com/kms/docs/ekm} 
-  }
-}
+GCP
+&
+\textbf{Google Cloud Platform}
+\\
 
-\newglossaryentry{GCP}{
-name={GCP},
-description={textbf{Google Cloud Platform } }}
+GDPR
+&
+\textbf{General Data Protection Regulation}
+\\
 
-\newglossaryentry{GDPR}{
-name={GDPR},
-description={\textbf{General Data Protection Regulation} 
-  }
-}
+HSM
+&
+\textbf{Hardware Security Module} 
+\\
 
-\newglossaryentry{HSM}{
-name={HSM},
-description={\textbf{Hardware Security Module}  }
-}
+KEK
+&
+\textbf{Key Encryption Key}\\
+ & 
+{\footnotesize\url{https://security.stackexchange.com/questions/93886/dek-kek-and-master-key-simple-explanation} }
+\\ 
 
-\newglossaryentry{KEK}{
-name={KEK},
-description={\textbf{Key Encryption Key}
-\url{https://security.stackexchange.com/questions/93886/dek-kek-and-master-key-simple-explanation} 
-  }
-}
+KVM
+&
+\textbf{Kernel-based Virtual Machine}\\
+ & 
+{\footnotesize\url{https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine} }
+\\
 
+OS
+&
+\textbf{Operating System}\\
+ & 
+{\footnotesize\url{https://en.wikipedia.org/wiki/Operating_system} }
+\\
 
+PCR
+&
+\textbf{Platform Configuration Registers }\\
+ & 
+{\footnotesize\url{https://wiki.archlinux.org/title/Trusted_Platform_Module}}\\
+ & 
+{\footnotesize\url{https://crypto.stanford.edu/cs155old/cs155-spring11/lectures/08-TCG.pdf} }
+\\
 
-\newglossaryentry{KVM}{
-name={KVM},
-description={\textbf{Kernel-based Virtual Machine}
-\url{https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine} 
-  }
-}
+SEV
+&
+\textbf{Secure Encrypted Virtualization}\\
+ & {\footnotesize\url{https://en.wikipedia.org/wiki/Zen_(first_generation)} }
+\\
 
+SEV-ES
+&
+\textbf{SEV - Encrypted State}
+\\
 
-\newglossaryentry{OS}{
-name={OS},
-description={textbf{Operating System}
-\url{https://en.wikipedia.org/wiki/Operating_system} 
-  }
-}
+SEV-SNP
+&
+\textbf{SEV - Secure Nested Paging} 
+\\
 
+SMM
+&
+\textbf{System Management Mode}\\
+ & 
+{\footnotesize\url{https://en.wikipedia.org/wiki/System_Management_Mode}}
+\\
 
-\newglossaryentry{PCR}{
-name={PCR},
-description={\textbf{Platform Configuration Registers }
-\url{https://wiki.archlinux.org/title/Trusted_Platform_Module}
-\url{https://crypto.stanford.edu/cs155old/cs155-spring11/lectures/08-TCG.pdf} 
-  }
-}
+TEE
+&
+\textbf{Trusted Execution Environment}\\
+ & 
+{\footnotesize\url{https://en.wikipedia.org/wiki/Trusted_execution_environment} }
+\\  
 
+TPM
+&
+\textbf{Trusted Platform Module}\\
+ & 
+{\footnotesize\url{https://en.wikipedia.org/wiki/Trusted_Platform_Module} }
+\\
 
-\newglossaryentry{SEV}{
-name={SEV},
-description={\textbf{Secure Encrypted Virtualization}
-\url{https://en.wikipedia.org/wiki/Zen_(first_generation)#Enhanced_security_and_virtualization_support} 
-  }
-}
+UDE
+&
+\textbf{Ubiquitous Data Encryption} 
+\\
 
+UEFI
+&
+\textbf{Unified Extensible Firmware Interface}\\
+ & 
+{\footnotesize\url{https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface}}
+\\  
 
-\newglossaryentry{SEV-ES}{
-name={SEV-ES},
-description={\textbf{SEV - Encrypted State}
-  }
-}
+VM
+&
+\textbf{Virtual Machine}\\
+ & 
+{\footnotesize\url{https://en.wikipedia.org/wiki/Virtual_machine}}
+\\
 
-
-\newglossaryentry{SEV-SNP}{
-name={SEV-SNP},
-description={\textbf{SEV - Secure Nested Paging} 
-  }
-}
-
-
-\newglossaryentry{SMM}{
-name={SMM},
-description={\textbf{System Management Mode}
-\url{https://en.wikipedia.org/wiki/System_Management_Mode}
-  }
-}
-
-
-\newglossaryentry{TEE}{name={TEE},description={\textbf{Trusted Execution Environment}
-\url{https://en.wikipedia.org/wiki/Trusted_execution_environment} 
-  }
-}
-
-
-\newglossaryentry{TPM}{name={TPM},description={\textbf{Trusted Platform Module}
-\url{https://en.wikipedia.org/wiki/Trusted_Platform_Module} 
-  }
-}
-
-
-\newglossaryentry{UDE}{name={UDE},description={\textbf{Ubiquitous Data Encryption} 
-  }
-}
-
-
-\newglossaryentry{UEFI}{name={UEFI},description={\textbf{Unified Extensible Firmware Interface}
-\url{https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface}
-  }
-}
-
-
-\newglossaryentry{VM}{name={VM},description={\textbf{Virtual Machine}
-\url{https://en.wikipedia.org/wiki/Virtual_machine}
-  }
-}
-
-
-
+\end{tabular}
