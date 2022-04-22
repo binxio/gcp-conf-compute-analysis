@@ -6,7 +6,7 @@
 
 Confidential VMs are built on top of Google's Shielded VMs. 
 
-\texbf{Attention}: Confidential VM does not support live migration 
+\textbf{Attention}: Confidential VM does not support live migration 
 \citep{google_creating_2022}. 
 “They must be set to stop and optionally restart. 
 Compute Engine offers a 60-second notice before a Confidential VM is stopped.” 
@@ -64,7 +64,7 @@ Image from (Kohlbrenner et al., 2020)
 Confidential VM at Google Cloud uses the basic version of AMD Secure Encrypted Virtualization called “SEV” (EPYC 7001, Napels). AMD also offers more advanced versions of this technology called 
 SEV-ES (Encrypted State, EPYC 7002, Rome) and the newer 
 SEV-SNP (Secure Nested Paging, EPYC 7003, Milan). 
-(Cutress & Frumusanu, 2021) (Wikichip Contributors, 2021) (Kennedy, 2020)
+(Cutress \& Frumusanu, 2021) (Wikichip Contributors, 2021) (Kennedy, 2020)
 
 
 Image from (Razavidinani, 2021)
@@ -73,7 +73,7 @@ Image from (Razavidinani, 2021)
 protects data from theft by other code or users on the host box. [but]
 There is no integrity protection, so a compromised hypervisor or rogue Googler could scribble over an SEV-protected VM's memory and disrupt, end, or meddle with the operation of the Confidential Virtual Machine. To prevent malicious reading and writing, you need AMD's just-unveiled SEV-SNP technology …” (Nichols, 2020) (MMS, 2015)
 
-Google has started to utilize the EPYC 7003 Milan chips for their C2D instances (Czop & Katsardis, 2022). However, the ES and SNP versions are not supported yet on Confidential Compute at GCP. 
+Google has started to utilize the EPYC 7003 Milan chips for their C2D instances (Czop \& Katsardis, 2022). However, the ES and SNP versions are not supported yet on Confidential Compute at GCP. 
 
 
 \subsection*{AMD SEV versions - threat mitigation overview}

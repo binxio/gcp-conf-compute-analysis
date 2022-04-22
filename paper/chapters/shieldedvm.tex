@@ -74,7 +74,7 @@ Shielded VM creates log entries for the following types of events:
 Identifies if the vTPM has been cleared, which deletes any secrets stored in it. 
 This doesn't affect any aspect of the Shielded VM, 
 so you will only care about this if you use the vTPM 
-to shield sensitive data as described in vTPM\footnote{\url{https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#vtpm}} 
+to shield sensitive data as described in vTPM\footnote{\url{https://cloud.google.com/compute/shielded-vm/docs/shielded-vm}} 
 \citep{google_what_2022}.
 
 \subsubsection*{setShieldedInstanceIntegrityPolicy}
@@ -102,15 +102,16 @@ and provides details on the PCR values from the baseline
 and the most recent boot sequence that were compared to make that determination.
 
 \subsection*{Determining the cause of boot integrity validation failure}
-The actualMeasurements array contains the PCR values for the latest boot sequence. 
+The actualMeasurements array contains the PCR values 
+for the latest boot sequence. 
 The values inside this array are compared to the policyMeasurements array 
 to determine if there has been any change in the VM instance boot sequence. 
-In the screenshot below PCR_9 doesn’t match, which means the policy will fail.
+In the screenshot below PCR\_9 doesn’t match, which means the policy will fail.
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.5\linewidth]{pcr9}
-    \caption{ PCR_9 doesn’t match, which means the policy will fail.}
+    \caption{ PCR\_9 doesn’t match, which means the policy will fail.}
     \label{fig:pcr9}
 \end{figure}
 
