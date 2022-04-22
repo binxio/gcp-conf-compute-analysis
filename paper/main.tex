@@ -1,7 +1,7 @@
 \documentclass[10pt, a4paper]{article}
 
-\include{./packages.tex} % include setting for this paper
-\include{./title.tex} % include paper title and header/footer config
+\input{./packages.tex} % include setting for this paper
+\input{./title.tex} % include paper title and header/footer config
 
 \begin{document}
     \date{\today}
@@ -11,6 +11,8 @@
     \input{chapters/introduction.tex}
     \input{chapters/summary.tex}
     \input{chapters/about.tex}
+    
+    \tableofcontents
 
     \input{chapters/abbreviations.tex}
     
