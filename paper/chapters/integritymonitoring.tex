@@ -1,0 +1,24 @@
+%!TEX root = ../main.tex
+
+\section*{GCP Integrity monitoring}
+\addcontentsline{toc}{section}{GCP Integrity monitoring}
+
+Integrity monitoring is a feature of both Shielded VM 
+and Confidential VM that helps you understand 
+and make decisions about the state of your VM instances.
+
+You can view integrity reports in Cloud Monitoring 
+and set alerts on integrity failures. 
+You can review the details of integrity monitoring results in Cloud Logging.
+
+During the Measured Boot of a Confidential VM instance, 
+PCR[0] (a platform control register\footnote{\url{https://link.springer.com/chapter/10.1007/978-1-4302-6584-9_12}}) 
+is updated with the value SEV.
+
+\subsetion*{Automating responses to integrity validation events}
+Integrity monitoring collects measurements from VM instances 
+and surfaces them in Cloud Logging. 
+Logs can be exported to Google Cloud Pub/Sub. 
+We can create a cloud function that subscribes to this event stream 
+and shuts down VM instances that fail integrity validation.
+
