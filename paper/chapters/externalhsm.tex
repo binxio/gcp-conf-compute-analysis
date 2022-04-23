@@ -28,7 +28,7 @@ Confidential computing required only for decryption: a DEK may be generated on-p
 \textbf{Confidential computing required only for encryption}: A DEK generated within a GCP confidential VM is then wrapped by a CCKM KEK. In the cloud, use of the unwrapped DEK is possible only by an attested, verified confidential VM. However, if the data is migrated from cloud to on premises, unwrapping may be permitted by a non-confidential computing environment, while retaining the assurance that data originated in a confidential VM.
 
 \textbf{Confidential computing not required}: A DEK may be generated on- premises in a non-confidential environment and wrapped by a CCKM KEK. The data moves to another regular environment (on cloud or on-premises). Key unwrapping and hence data access is possible in a second regular environment but only with access to and permission from CCKM.” 
-\begin{quote}
+\end{quote}
 
 This is a complexity to setup and adds extra isolution 
 between the various VM’s you might be running. 
