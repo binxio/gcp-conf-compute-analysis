@@ -1,7 +1,7 @@
 %!TEX root = ../main.tex
 
-\section*{GCP Titan (TPM)}
-\addcontentsline{toc}{section}{GCP Titan (TPM)}
+\section{GCP Titan (TPM)}
+%\addcontentsline{toc}{section}{GCP Titan (TPM)}
 
 All of Google Cloud runs on Google purpose built servers 
 which contain a by google custom build chip, called Titan. 
@@ -29,12 +29,12 @@ Establish a hardware root of trust (Machine Identity)
 
 Let's explore how Titan performs these duties:
 
-\subsection*{Secure Boot}
+\subsection{Secure Boot}
 Using public key cryptography, 
 the Titan chip validates the boot firmware from a known baseline using digital signatures. 
 This ensures nothing at the firmware level has been tampered with, and the machine is trusted.
 
-\subsection*{Machine Identity}
+\subsection{Machine Identity}
 Cryptographic keys are fused into the Titan chip during its creation. 
 Using these fused keys and cryptography we can ensure the Titan chip is valid, 
 creating a hardware base root of trust with which we can establish a trusted identity from.
@@ -53,7 +53,8 @@ this presentation by Johnson at the secure enclave workshop at google \citep{joh
 \end{figure}
 
 
-\subsection*{Titan extended to Shielded VM’s}
+\subsection{Titan extended to Shielded VM’s}
 The hardware integrity provided by the Titan chip is extended 
-to the Virtual Machine (VM), by the concept of the Shielded VM \citep{leibl_gcp_2022}.
+to the Virtual Machine (VM), by the concept of the Shielded VM 
+\citep{leibl_gcp_2022}.
 

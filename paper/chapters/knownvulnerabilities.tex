@@ -1,0 +1,50 @@
+%!TEX root = ../main.tex
+
+\section*{Confidential Compute - Known Vulnerabilities}
+\addcontentsline{toc}{section}{Confidential Compute - Known Vulnerabilities}
+
+
+This table is in addition to the table provided bij AMD previously mentioned.
+This table only includes the literature mentioned in this chapter. 
+The main conclusion is that the known vulnerabilities 
+are to be mitigated in the SEV-SNP. 
+The development team of AMD is really transparent on the found vulnerabilities 
+and in many papers thanked for their collaboration 
+on confirming the found vulnerabilities. 
+
+\begin{tabular}{ |l|c|c|c| }
+   & \textbf{SEV} & \textbf{SEV-ES} & \textbf{SEV-SNP}\\
+  \hline
+
+  \textbf{to be sorted} 
+  & \cite{hetzelt_security_2017,du_secure_2017,li_tlb_2021}
+  & \cite{li_tlb_2021} 
+  & \\
+
+  \textbf{Physical attacks} 
+  & \cite{li_exploiting_2019,buhren_insecure_2019,buhren_one_2021} 
+  & \cite{wilke_sevurity_2020,buhren_one_2021} 
+  & \cite{buhren_one_2021}\\
+
+  \textbf{Software attacks} 
+  & \cite{morbitzer_severed_2018,hetzelt_via_2021}
+  & \cite{hetzelt_via_2021} 
+  & \\
+
+  \textbf{Side-channel attacks} 
+  & \cite{li_crossline_2021,li_cipherleaks_2021,mestas_exploitation_2021} 
+  & \cite{li_crossline_2021,li_cipherleaks_2021,mestas_exploitation_2021} 
+  & \\
+
+  \textbf{Denial-of-service attacks} & & & \\
+
+\end{tabular}
+
+There are two authors that are very active in the discovery of the vulnerabilities. 
+These two authors are: 
+\begin{enumerate}
+  \item Mengyuan Li \\
+  from the Ohio State University.  
+  \item Robert Buhren \\
+  from T-Lab TU  Berlin.
+\end{enumerate}

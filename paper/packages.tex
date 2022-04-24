@@ -34,7 +34,7 @@
     % every new paragraph whiteline and starting at left-align (no tab)
 \usepackage{parskip}
     % every section on a new page
-\AddToHook{cmd/section/before}{\clearpage} 
+%\AddToHook{cmd/section/before}{\clearpage} 
 \usepackage{titlesec}
 \usepackage{colorprofiles}
 \usepackage{xcolor}
@@ -70,13 +70,14 @@
 %   TABLE/TEXT SETTINGS
 %----------------------------------------------------------------------------------------
 \usepackage{xurl}        % xurl package for long urls's in bib files
+\usepackage{booktabs}    % booktabs package for advanced table layout
 \usepackage{tabularx}    % tabularx package for advanced table magic
     \newcolumntype{C}{>{\centering\arraybackslash}X}
     \newcolumntype{L}{>{\arraybackslash}X}
 \usepackage{multirow}
 %\setlength{\tabcolsep}{4pt}
-%\setlength{\extrarowheight}{4pt}
-%\renewcommand{\arraystretch}{1.01}
+\setlength{\extrarowheight}{4pt}
+\renewcommand{\arraystretch}{1.5}
 
 
 %----------------------------------------------------------------------------------------

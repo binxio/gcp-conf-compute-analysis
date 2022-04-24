@@ -1,0 +1,51 @@
+%!TEX root = ../main.tex
+
+\section{Confidential Compute - Threat analysis}
+%\addcontentsline{toc}{section}{Confidential Compute - Threat analysis}
+
+
+
+\subsection{Threat Vector Google}
+\textbf{When} you can prove to in Run state that AMD SEV is used,\\ 
+\textbf{and} if AMD SEV-SNP is not used \\
+\textbf{and} if you trust the hardware integrity ensured by Google \\
+\textbf{then} Google can not listen into your data. 
+
+\textbf{If} you can NOT prove AMD SEV is being used \\
+\textbf{or} you do NOT trust the hardware integrity ensured by Google \\
+\textbf{then} we need to trust Google.
+
+\subsubsection*{Conclusion}
+
+Thus with AMD SEV and AMD SEV-ES we trust 
+google\footnote{\url{https://news.ycombinator.com/item?id=23832791}} 
+not to listen in and keep us safe. 
+With AMD-SNP we now assume google can not listen in, 
+even when the hardware is infiltrated.
+
+\subsection{Threat Vector Hardware}
+
+How big is the risk of a threat actor attacking the hardware?
+
+Google writes the following\footnote{\url{https://cloud.google.com/blog/products/gcp/7-ways-we-harden-our-kvm-hypervisor-at-google-cloud-security-in-plaintext}} on this:\\
+\begin{quote}
+“We rarely see side channel attacks attempted. A large shared infrastructure the size of Compute Engine makes it very impractical for hackers to attempt side channel attacks, attacks based on information gained from the physical implementation (timing and memory access patterns) of a cryptosystem, rather than brute force or theoretical weaknesses in the algorithms. 
+
+To mount this attack, the target VM and the attacker VM have to be collocated on the same physical host, and for any practical attack an attacker has to have some ability to induce execution of the cryptosystem being targeted. 
+
+One common use for side channel attacks is against cryptographic keys. Side channel attacks that leak information are usually addressed quickly by cryptographic library developers. To help prevent that, we recommend that Google Cloud customers ensure that their cryptographic libraries are supported and always up-to-date.“ 
+\end{quote}
+
+
+
+\subsubsection*{Conclusion}
+
+For hardware integrity we need to trust google, 
+and we need to make use of the shared hardware at Google. 
+When you use shared hardware and make certain a certain job 
+only has data on a specific hardware component for 10 minutes, 
+then this is too short of a time for an attacker to obtain enough data 
+to determine the decryption key to decrypt the data. 
+And the chances that an attacker has access to all the hardware 
+where the next data processing job runs on is very slim. 
+Only google themself are a realistic threat in this scenario.

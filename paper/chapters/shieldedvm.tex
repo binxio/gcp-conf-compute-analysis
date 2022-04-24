@@ -1,7 +1,7 @@
 %!TEX root = ../main.tex
 
-\section*{GCP Shielded VM (vTPM)}
-\addcontentsline{toc}{section}{GCP Shielded VM (vTPM)}
+\section{GCP Shielded VM (vTPM)}
+%\addcontentsline{toc}{section}{GCP Shielded VM (vTPM)}
 
 
 Shielded VM extends the concepts provided by Titan 
@@ -10,12 +10,12 @@ protecting end users from threats such as malicious UEFI drivers,
 boot vulnerabilities, and kernel vulnerabilities. 
 The Shielded VM capabilities can be broken down into two main parts.
 
-\subsection*{Secure Boot}
+\subsection{Secure Boot}
 Similar to Secure Boot with Titan, 
 Shielded VM’s Secure Boot helps ensure that the system only runs authentic software 
 by verifying the digital signature of all boot components on each boot.
 
-\subsection*{Measured Boot}
+\subsection{Measured Boot}
 In a blog post\footnote{\url{https://cloud.google.com/blog/products/gcp/virtual-trusted-platform-module-for-shielded-vms-security-in-plaintext}} 
 about TPMs, Google defines a TPM as 
 “A TPM is a hardware, firmware, or virtual device that aids in securing machines 
@@ -55,14 +55,14 @@ and the most recent boot sequence
     \label{fig:configuration-registers}
 \end{figure}
 
-\subsection*{GCP VM Images}
+\subsection{GCP VM Images}
 The VM image that you use for your VM’s needs to support Shielded VM’s. 
 The easiest way to achieve this is by using one of Google’s VM images. 
 Alternatively you need to prepare a 
 UEFI-compliant VM image\footnote{\url{https://cloud.google.com/compute/shielded-vm/docs/creating-shielded-images}} 
 and store it on Google.
 
-\subsection*{GCP VM Log Events}
+\subsection{GCP VM Log Events}
 The typical event progression you see for your VM’s in the logs is startupEvent, 
 earlyBootReportEvent, lateBootReportEvent, and eventually shutdownEvent, 
 all with the same bootCounter value to identify them 
@@ -101,7 +101,7 @@ Identifies whether the late boot sequence integrity check passed,
 and provides details on the PCR values from the baseline 
 and the most recent boot sequence that were compared to make that determination.
 
-\subsection*{Determining the cause of boot integrity validation failure}
+\subsection{Determining the cause of boot integrity validation failure}
 The actualMeasurements array contains the PCR values 
 for the latest boot sequence. 
 The values inside this array are compared to the policyMeasurements array 

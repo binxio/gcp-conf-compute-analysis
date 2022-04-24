@@ -1,7 +1,7 @@
 %!TEX root = ../main.tex
 
-\section*{GCP Confidential VM (TEE)}
-\addcontentsline{toc}{section}{GCP Confidential VM (TEE)}
+\section{GCP Confidential VM (TEE)}
+%\addcontentsline{toc}{section}{GCP Confidential VM (TEE)}
 
 
 Confidential VMs are built on top of Google's Shielded VMs. 
@@ -19,7 +19,7 @@ Compute Engine offers a 60-second notice before a Confidential VM is stopped.”
     \label{fig:60-second-notice}
 \end{figure}
 
-\subsection*{AMD EPYC} 
+\subsection{AMD EPYC} 
 Google's Confidential VMs use the AMD EPYC Secure Encrypted Virtualization (SEV) 
 to deliver hardware memory encryption (AES-128) to the VM 
 while still delivering good performance \citep{amd_amd_2022, amd_secure_2019}. 
@@ -43,7 +43,7 @@ and provides CPU firmware (updates) on GitHub\footnote{\url{https://github.com/A
 
 
 
-\subsection*{AMD SEV}
+\subsection{AMD SEV}
 AMD SEV is part of the Trusted Execution Environment (TEE) design 
 and organized in the Confidential Compute Consortium 
 \citep{foundation_members_2020}. 
@@ -65,7 +65,7 @@ host OS and its hypervisor, all external PCI(e) devices, and more.”
 \end{figure}
 
 
-\subsection*{AMD SEV versions}
+\subsection{AMD SEV versions}
 Confidential VM at Google Cloud uses the basic version of 
 AMD Secure Encrypted Virtualization called “SEV” (EPYC 7001, Napels). 
 AMD also offers more advanced versions of this technology called 
@@ -98,7 +98,7 @@ However, the ES and SNP versions
 are not supported yet on Confidential Compute at GCP. 
 
 
-\subsection*{AMD SEV versions - threat mitigation overview}
+\subsection{AMD SEV versions - threat mitigation overview}
 The table below is provided by AMD 
 and gives an overview of the various attacks 
 that can be mitigated using this technology differentiated per AMD SEV version. 
@@ -116,9 +116,9 @@ David Kaplan \citep{kaplan_upcoming_2019} on the extra features of SNP.
 
  
 
-\subsection*{GCP - Log Events}
+\subsection{GCP - Log Events}
 
-\subsubsection*{sevLaunchAttestationReportEvent}
+\subsubsection{sevLaunchAttestationReportEvent}
 Launch attestation reports are used to validate 
 that a Confidential VM is launched. 
 That means that the hypervisor created a VM 
@@ -146,7 +146,7 @@ The following screenshot shows a typical launch attestation report:
 \end{figure}
 
 
-\subsection*{Verifying AMD SEV is enabled from inside the VM }
+\subsection{Verifying AMD SEV is enabled from inside the VM }
 Confidential VM uses AMD Secure Encrypted Virtualization (SEV). 
 To verify that Confidential Computing is enabled, 
 we can use the dmesg logs on your VM 
@@ -171,5 +171,5 @@ Your VM can use the sev-guest\footnote{\url{https://github.com/AMDESE/sev-guest 
 tool to request to do so. 
 However, the SEV-SNP API is not yet available on GCP (source needed).
 
-\subsubsection*{AMD SEV demo encrypted state validation}
+\subsubsection{AMD SEV demo encrypted state validation}
 There is demo code created by SalrasShid123\footnote{\url{https://github.com/salrashid123/gcp_cc_sev_demo }} on how to use the AMD tooling. 
