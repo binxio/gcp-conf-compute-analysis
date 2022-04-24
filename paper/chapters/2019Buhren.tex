@@ -1,0 +1,34 @@
+%!TEX root = ../main.tex
+
+\subsection{\cite{buhren_insecure_2019} - Insecure Until Proven Updated: Analyzing AMD SEV‘s Remote Attestation}
+
+\textbf{Insecure Until Proven Updated: Analyzing AMD SEV‘s Remote Attestation} 
+
+\subsubsection*{Abstract  \cite{buhren_insecure_2019}}
+“Cloud computing is one of the most prominent technologies to host Internet services that unfortunately leads to an increased risk of data theft. Customers of cloud services have to trust the cloud providers, as they control the building blocks that form the cloud. This includes the hypervisor enabling the sharing of a single hardware platform among multiple tenants. Executing in a higher-privileged CPU mode, the hypervisor has direct access to the memory of virtual machines. While data at rest can be protected using well-known disk encryption methods, data residing in main memory is still threatened by a potentially malicious cloud provider.
+
+AMD Secure Encrypted Virtualization (SEV) claims a new level of protection in such cloud scenarios. AMD SEV encrypts the main memory of virtual machines with VM-specific keys, thereby denying the higher-privileged hypervisor access to a guest’s memory. To enable the cloud customer to verify the correct deployment of his virtual machine, SEV additionally introduces a remote attestation protocol. This protocol is a crucial component of the SEV technology that can prove that SEV protection is in place and that the virtual machine was not subject to manipulation.
+
+This paper analyzes the firmware components that implement the SEV remote attestation protocol on the current AMD Epyc Naples CPU series. We demonstrate that it is possible to extract critical CPU-specific keys that are fundamental for the security of the remote attestation protocol.
+
+Building on the extracted keys, we propose attacks that allow a malicious cloud provider a complete circumvention of the SEV protection mechanisms. Although the underlying firmware issues were already fixed by AMD, we show that the current series of AMD Epyc CPUs, i.e., the Naples series, does not prevent the installation of previous firmware versions. We show that the severity of our proposed attacks is very high as no purely software-based mitigations are possible. This effectively renders the SEV technology on current AMD Epyc CPUs useless when confronted with an untrusted cloud provider.
+
+To overcome these issues, we also propose robust changes to the SEV design that allow future generations of the SEV technology to mitigate the proposed attacks.“
+
+\subsubsection*{Conclusion \cite{buhren_insecure_2019}}
+“In this paper, we analyzed the firmware components that implement the SEV API. We identified security issues in the secure boot mechanism of the PSP that hosts the SEV firmware. This allowed us to provide a patched version of the SEV firmware which gives us arbitrary read and write access to the PSP’s memory. We used this firmware to extract the Chip Endorsement Key (CEK) of three different AMD Epyc processors. We proposed two attacks against SEV-protected virtual machines using the extracted CEK as well as an attack based on a patched SEV firmware. While the patched firmware allowed us to extract encrypted memory in plaintext, the extracted CEK allows an attacker to impersonate the presence of SEV altogether. Even if the targeted virtual machine is not executed on a compromised SEV platform, the migration attack allows an attacker to acquire the cryptographic keys that are used to encrypt the virtual machines during migration.
+
+The severity of the proposed attacks is amplified due to the missing rollback prevention as well as the infinite lifetime of the CEK. We showed that an attacker can always roll back to a vulnerable PSP firmware to extract the CEK. Even if the PSP firmware is upgraded to a newer version, this extracted CEK is still valid for the corresponding CPU.
+
+In the current design of the SEV technology, it is impossible for a cloud customer to verify the integrity of the remote platform given the fact that a vulnerable firmware version exists. We conclude that the SEV technology on AMD EPYC systems of the Naples CPU series cannot protect virtual machines as the correct deployment cannot be guaranteed. Given the lifetime of the CEK, it is not possible to provide purely software-based mitigations.
+
+To overcome the issues of the current SEV technology, we proposed design changes to SEV that enable the cloud customer to enforce the use of a specific PSP firmware on the remote platform. This ensures the trustworthiness of the SEV technology despite PSP firmware issues as it allows software-based fixes for the PSP firmware.”
+
+\subsubsection*{Extra Notes}
+"CEK Derivation\\
+The current CEK is derived using a key derivation function (KDF) that takes a 32-byte secret value which is unique per CPU and is stored in one-time-programmable (OTP) fuses (SOTP): CEK \= KDF(SOTP) ...."
+\url{https://arxiv.org/pdf/1908.11680.pdf} p 10
+
+"1.2.3 Device Authenticity\\
+The firmware provides a mechanism to verify that it is executing on AMD hardware that is capable of supporting SEV. Each platform contains a chip-unique signing key called the Chip Endorsement Key (CEK). The CEK is ..."
+\url{https://www.amd.com/system/files/TechDocs/55766_SEV-KM_API_Specification.pdf} p 20

@@ -26,7 +26,8 @@
     \include{chapters/summary.tex}
     
     \newpage
-    \tableofcontents
+    {\footnotesize\tableofcontents}
+    
     \include{chapters/about.tex}
     \include{chapters/abbreviations.tex}
     \include{chapters/titan.tex}
@@ -36,9 +37,9 @@
     \input{chapters/organizationalpolicies.tex}
     \input{chapters/externalhsm.tex}
     \include{chapters/threatanalysis.tex}
-
-    \input{chapters/conclusion.tex}
-    \input{chapters/acknowledgment.tex}
+    \include{chapters/knownvulnerabilities}
+    \include{chapters/conclusion.tex}
+    \include{chapters/acknowledgment.tex}
 
     {\footnotesize \bibliography{conf}}
 \end{document}

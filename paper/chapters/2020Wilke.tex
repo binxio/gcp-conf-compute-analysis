@@ -1,0 +1,16 @@
+%!TEX root = ../main.tex
+
+\subsection{\cite{wilke_sevurity_2020} - SEVurity: No Security Without Integrity -- Breaking Integrity-Free Memory Encryption with Minimal Assumptions }
+
+\textbf{SEVurity: No Security Without Integrity -- Breaking Integrity-Free Memory 
+Encryption with Minimal Assumptions} 
+
+\subsubsection*{Abstract \cite{wilke_sevurity_2020}}
+“One reason for not adopting cloud services is the required trust in the cloud provider: As they control the hypervisor, any data processed in the system is accessible to them. Full memory encryption for Virtual Machines (VM) protects against curious cloud providers as well as otherwise compromised hypervisors. AMD Secure Encrypted Virtualization (SEV) is the most prevalent hardware-based full memory encryption for VMs. Its newest extension, SEV-ES, also protects the entire VM state during context switches, aiming to ensure that the host neither learns anything about the data that is processed inside the VM, nor is able to modify its execution state. Several previous works have analyzed the security of SEV and have shown that, by controlling I/O, it is possible to exfiltrate data or even gain control over the VM’s execution. In this work, we introduce two new methods that allow us to inject arbitrary code into SEV-ES secured virtual machines. Due to the lack of proper integrity protection, it is sufficient to reuse existing ciphertext to build a high-speed encryption oracle. As a result, our attack no longer depends on control over the I/O, which is needed by prior attacks. As I/O manipulation is highly detectable, our attacks are stealthier. In addition, we reverse-engineer the previously unknown, improved Xor-Encrypt-Xor (XEX) based encryption mode, that AMD is using on updated processors, and show, for the first time, how it can be overcome by our new attacks.”
+
+\subsubsection*{Conclusion \cite{wilke_sevurity_2020}}
+“In this work we have shown that the lack of proper integrity protection can be exploited to execute arbitrary code within SEV-ES secured VMs. We have reverse engineered the new, XEX-based encryption on updated AMD Epyc processors, and developed a method to control plaintext bytes by moving existing ciphertext blocks. After using this method for bootstrapping a 2-byte encryption oracle, we have shown how to place instructions to control 4 bytes and finally 16 bytes per plaintext block, yielding a 16-byte encryption oracle. In addition, we have shown how to abuse the emulated cpuid instruction to build a high performance encryption oracle. Compared to similar attacks, our attacks works with SEV-ES and does not rely on any I/O operations.
+
+We have discussed various countermeasures: A stronger tweak function and disabling instruction interception might significantly complicate our described attacks. However, we do not expect that a full mitigation is possible without implementing a proper integrity protection, which is able to detect modified ciphertext before decryption.
+
+Proof of concept code is available at https://github.com/ UzL-ITS/SEVurity/“

@@ -1,0 +1,32 @@
+%!TEX root = ../main.tex
+
+\subsection{\cite{hetzelt_security_2017} - Security Analysis of Encrypted Virtual Machines}
+
+\textbf{Security Analysis of Encrypted Virtual Machines }
+
+\subsubsection*{Abstract \cite{hetzelt_security_2017}}
+“Both AMD and Intel have presented technologies 
+for confidential computing in cloud environments. 
+The proposed solutions — AMD SEV (-ES, -SNP) and Intel TDX — protect Virtual Machines (VMs) against attacks from higher privileged layers through memory encryption and integrity protection. 
+This model of computation draws a new trust boundary between virtual devices and the VM, which insofar lacks thorough examination. 
+In this paper, we therefore present an analysis of the virtual device interface and discuss several attack vectors against a protected VM. 
+Further, we develop and evaluate VIA, an automated analysis tool to detect cases of improper sanitization of input received via the virtual device interface. 
+VIA improves upon existing approaches for the automated analysis of device interfaces in the following aspects: 
+(i) support for virtualization relevant buses, 
+(ii) efficient Direct Memory Access (DMA) support and 
+(iii) performance. 
+VIA builds upon the Linux Kernel Library and clang’s libfuzzer to fuzz 
+the communication between the driver and the device via MMIO, PIO, and DMA. 
+An evaluation of VIA shows that it performs 570 executions per second on average 
+and improves performance compared to existing approaches by an average factor of 2706.
+ Using VIA, we analyzed 22 drivers in Linux 5.10.0-rc6, 
+ thereby uncovering 50 bugs and initiating multiple patches to the virtual device driver interface of Linux. 
+ To prove our findings’ criticality under the threat model of AMD SEV and Intel TDX, we showcase three exemplary attacks based on the bugs found. 
+ The attacks enable a malicious hypervisor to corrupt the memory and gain code execution in protected VMs with SEV-ES and are theoretically applicable to SEV-SNP and TDX.”
+
+\subsubsection*{Conclusion \cite{hetzelt_security_2017}}
+“We presented VIA: a framework for dynamic analysis of drivers under the threat model of a malicious HV. VIA was applied to 22 drivers in Linux 5.10.0-rc6, which covered network drivers, VirtIObased drivers, and platform drivers. The evaluation found 50 bugs from a variety of classes and initiated multiple patches to the Linux kernel. We implement Proof-of-Concept exploits for three bug classes that gain code execution or corrupt memory inside an AMD SEV-ES VM. The described exploits demonstrate how the capabilities of a malicious HV, such as control over virtual devices, fine grained control over VM execution as well as information about the VM execution state, can be used to craft reliable exploits. The majority of bugs were reported to the driver maintainers, and the security implications were responsibly disclosed.
+
+Unlike other solutions for driver analysis, VIA carefully considers the capabilities of the HV and the semantics of the DMA API to detect more cases of improper input sanitization and anti-patterns in device programming. VIA provides a coverage-driven in-process userspace fuzzer built upon libfuzzer and LKL. Compared to existing approaches, VIA reduces setup overhead by moving the analysis into a userspace program. In combination with targeted optimizations of the userspace kernel environment, VIA drastically improves dynamic analysis throughput. To the best of our knowledge, VIA presents the first approach to analyze the device driver interface under the new threat model of protected virtual machines.
+
+Our results suggest that many Linux device drivers do not correctly sanitize device-provided data. Under the threat model of AMD SEV-SNP and Intel TDX, this presents a serious security risk for the protected VM, which may be exploited through a software driver bug. Thus, the software operating under such a threat model should reduce the interfaces with untrusted entities and should rely on established methods for testing the remaining interfaces.“
