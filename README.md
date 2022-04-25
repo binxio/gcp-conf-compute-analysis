@@ -140,19 +140,16 @@ that refreshes automatically when the pdf is changed.
 1. All figures should have transparent background color.
 
 ## Backlog
-1. Select Open Font (default roboto)
-1. add organization, email, orcid and communicating to authors
-1. migrate content from google doc to latex
-1. copy references from Zotero to bib file
-1. setup/ reserve an DOI in Zenodo
-1. move backlog to github 
-1. refactor gitlab-ci to github actions
-1. adjust latex template design based on Binx based on Xebia
+1. Update authors information (org).
+1. Setup/ reserve an DOI in Zenodo for this doc.
+1. Move backlog to github .
+1. Refactor gitlab-ci to github actions.
+1. Adjust latex template design based on Binx based on Xebia.
   1. Rotate whitepaper to landscape
-1. use latex tooling (TODO EDZO) to fix abbreviation and glossary
 
-### Font
+### Fonts
 * The google font familiy is well supported in LaTeX, new and free to use.
+* Currently this document is using the Noto font.
 
 #### Noto
 * The Noto font is part of google font familiy and has extensive math and unicode support
