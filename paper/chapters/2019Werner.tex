@@ -1,0 +1,49 @@
+%!TEX root = ../main.tex
+
+\subsection{\cite{2019-werner} - The SEVerESt Of Them All: Inference Attacks Against Secure Virtual Enclaves}
+
+\textbf{The SEVerESt Of Them All: Inference Attacks Against Secure Virtual Enclaves}
+
+
+\subsubsection*{Abstract \cite{2019-werner}}
+"The success of cloud computing has shown that the cost and convenience benefits of outsourcing infrastructure, platform, and software resources outweigh concerns about confidentiality. Still, many
+businesses resist moving private data to cloud providers due to intellectual property and privacy reasons. A recent wave of hardware
+virtualization technologies aims to alleviate these concerns by offering encrypted virtualization features that support data confidentiality of guest virtual machines (e.g., by transparently encrypting
+memory) even when running on top untrusted hypervisors.
+
+We introduce two new attacks that can breach the confidentiality
+of protected enclaves. First, we show how a cloud adversary can
+judiciously inspect the general purpose registers to unmask the
+computation that passes through them. Specifically, we demonstrate
+a set of attacks that can precisely infer the executed instructions
+and eventually capture sensitive data given only indirect access to
+the CPU state as observed via the general purpose registers. Second,
+we show that even under a more restrictive environment — where
+access to the general purpose registers is no longer available —
+we can apply a different inference attack to recover the structure
+of an unknown, running, application as a stepping stone towards
+application fingerprinting. We demonstrate the practicality of these
+inference attacks by showing how an adversary can identify different applications and even distinguish between versions of the same
+application and the compiler used, recover data transferred over
+TLS connections within the encrypted guest, retrieve the contents
+of sensitive data as it is being read from disk by the guest, and inject
+arbitrary data within the guest. Taken as a whole, these attacks
+serve as a cautionary tale of what can go wrong when the state of
+registers (e.g., in AMD’s SEV) and application performance data
+(e.g., in AMD’s SEV-ES) are left unprotected. The latter is the first
+known attack that was designed to specifically target SEV-ES.
+
+
+\subsubsection*{Conclusion \cite{2019-werner}}
+"To address cloud confidentiality, virtualization technologies have recently offered encrypted virtualization features that support transparent encryption of memory as a means of protection against
+malicious tenants or even untrusted hypervisors. In this paper, we
+examine the extent to which these technologies meet their goals.
+In particular, we introduce a new class of inference attacks and
+show how these attacks can breach the privacy of tenants relying
+on secure encrypted virtualization technologies. As a concrete case
+in point, we show how the security of the Secure Encrypted Virtualization (SEV) platform can be undermined. Additionally, we
+show that even when additional state is encrypted (e.g., as proposed
+under the SEV-ES extension where the state of general purpose registers is also encrypted), an adversary may still mount application
+fingerprinting attacks, rendering those protections less effective
+than first thought. We provide suggestions for mitigating the threat
+posed by some of these attacks in the short term."

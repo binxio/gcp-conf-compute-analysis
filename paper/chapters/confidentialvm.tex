@@ -4,7 +4,8 @@
 %\addcontentsline{toc}{section}{GCP Confidential VM (TEE)}
 
 
-Confidential VMs are built on top of Google's Shielded VMs. 
+Confidential VMs are built on top of 
+Google's Shielded VMs\footnote{\url{https://cloud.google.com/compute/shielded-vm/docs/shielded-vm}}. 
 
 \textbf{Attention}: Confidential VM does not support live migration 
 \citep{google_creating_2022}. 
@@ -97,7 +98,7 @@ for their C2D instances \citep{czop_introducing_2022}.
 However, the ES and SNP versions 
 are not supported yet on Confidential Compute at GCP. 
 
-
+\newpage
 \subsection{AMD SEV versions - threat mitigation overview}
 The table below is provided by AMD 
 and gives an overview of the various attacks 
@@ -118,7 +119,7 @@ David Kaplan \citep{kaplan_upcoming_2019} on the extra features of SNP.
 
 \subsection{GCP - Log Events}
 
-\subsubsection{sevLaunchAttestationReportEvent}
+\textbf{sevLaunchAttestationReportEvent}\\
 Launch attestation reports are used to validate 
 that a Confidential VM is launched. 
 That means that the hypervisor created a VM 

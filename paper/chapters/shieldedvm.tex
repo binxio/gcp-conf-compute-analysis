@@ -70,33 +70,33 @@ as describing the same VM instance boot sequence.
 
 Shielded VM creates log entries for the following types of events:
 
-\subsubsection*{clearTPMEvent}
+\textbf{clearTPMEvent}\\
 Identifies if the vTPM has been cleared, which deletes any secrets stored in it. 
 This doesn't affect any aspect of the Shielded VM, 
 so you will only care about this if you use the vTPM 
 to shield sensitive data as described in vTPM\footnote{\url{https://cloud.google.com/compute/shielded-vm/docs/shielded-vm}} 
 \citep{google_what_2022}.
 
-\subsubsection*{setShieldedInstanceIntegrityPolicy}
+\textbf{setShieldedInstanceIntegrityPolicy}\\
 Logged each time you update the integrity policy baseline.
 
-\subsubsection*{shutdownEvent}
+\textbf{shutdownEvent}\\
 Logged each time the VM instance is stopped.
 
-\subsubsection*{startupEvent}
+\textbf{startupEvent}\\
 Logged each time the VM instance is started. 
 The interesting information in this event is the bootCounter value, 
 which identifies how many times this instance has been restarted.
 
-\subsubsection*{updateShieldedInstanceConfig}
+\textbf{updateShieldedInstanceConfig}\\
 Logged each time you enable or disable one of the Shielded VM options.
 
-\subsubsection*{earlyBootReportEvent}
+\textbf{earlyBootReportEvent}\\
 Identifies whether the early boot sequence integrity check passed, 
 and provides details on the PCR values from the baseline below,
 the most recent boot sequence that were compared to make that determination.
 
-\subsubsection*{lateBootReportEvent}
+\textbf{lateBootReportEvent}\\
 Identifies whether the late boot sequence integrity check passed, 
 and provides details on the PCR values from the baseline 
 and the most recent boot sequence that were compared to make that determination.

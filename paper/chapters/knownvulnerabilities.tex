@@ -3,7 +3,6 @@
 \section*{Confidential Compute - Known Vulnerabilities}
 \addcontentsline{toc}{section}{Confidential Compute - Known Vulnerabilities}
 
-
 This table is in addition to the table provided bij AMD previously mentioned.
 This table only includes the literature mentioned in this chapter. 
 The main conclusion is that the known vulnerabilities 
@@ -12,44 +11,98 @@ The development team of AMD is really transparent on the found vulnerabilities
 and in many papers thanked for their collaboration 
 on confirming the found vulnerabilities. 
 
-\begin{tabular}{ |l|c|c|c| }
-   & \textbf{SEV} & \textbf{SEV-ES} & \textbf{SEV-SNP}\\
-  \hline
+\begin{table}[ht]
+\label{tab:lit}
+\caption{Found literate on known vulnerabilities AMD EPYC confidential compute}
+\centering
+{
+\footnotesize
+  \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+    \hline
+     & \textbf{SEV} 
+     & \textbf{SEV-ES} 
+     & \textbf{SEV-SNP}\\
+    \hline
 
-  \textbf{to be sorted} 
-  & \cite{hetzelt_security_2017,du_secure_2017,li_tlb_2021}
-  & \cite{li_tlb_2021} 
-  & \\
+    \textbf{to be sorted} 
+    & \begin{minipage}[t]{7cm}
+        \cite{hetzelt_security_2017}\\
+        \cite{du_secure_2017} \\
+        \cite{li_tlb_2021}
+      \end{minipage}
+    & \cite{li_tlb_2021} 
+    & 
+    \\
 
-  \textbf{Physical attacks} 
-  & \cite{li_exploiting_2019,buhren_insecure_2019,buhren_one_2021} 
-  & \cite{wilke_sevurity_2020,buhren_one_2021} 
-  & \cite{buhren_one_2021}\\
+    \textbf{Physical attacks} 
+    & \begin{minipage}[t]{7cm}
+        \cite{li_exploiting_2019} \\
+        \cite{buhren_insecure_2019} \\
+        \cite{buhren_one_2021}
+      \end{minipage}
+    & \begin{minipage}[t]{7cm}
+        \cite{wilke_sevurity_2020}\\
+        \cite{buhren_one_2021} 
+      \end{minipage}
+    & \cite{buhren_one_2021}
+    \\
 
-  \textbf{Software attacks} 
-  & \cite{morbitzer_severed_2018,hetzelt_via_2021}
-  & \cite{hetzelt_via_2021} 
-  & \\
+    \textbf{Software attacks} 
+    & \begin{minipage}[t]{7cm}
+        \cite{morbitzer_severed_2018} \\
+        \cite{2019-werner}\\
+        \cite{hetzelt_via_2021}
+      \end{minipage}
+    & \begin{minipage}[t]{7cm}
+        \cite{2019-werner}\\
+        \cite{hetzelt_via_2021} 
+       \end{minipage}
+    & 
+    \\
 
-  \textbf{Side-channel attacks} 
-  & \cite{li_crossline_2021,li_cipherleaks_2021,mestas_exploitation_2021} 
-  & \cite{li_crossline_2021,li_cipherleaks_2021,mestas_exploitation_2021} 
-  & \\
+    \textbf{Side-channel attacks} 
+    & \begin{minipage}[t]{7cm}
+        \cite{li_crossline_2021}\\ 
+        \cite{li_cipherleaks_2021}\\ 
+        \cite{mestas_exploitation_2021} 
+      \end{minipage}
+    & \begin{minipage}[t]{7cm}
+        \cite{li_crossline_2021}\\
+        \cite{li_cipherleaks_2021}\\
+        \cite{mestas_exploitation_2021} 
+      \end{minipage}
+    & 
+    \\
 
-  \textbf{Denial-of-service attacks} & & & \\
+    \textbf{Denial-of-service attacks} 
+    & 
+    & 
+    & 
+    \\
+    \hline
 
-\end{tabular}
+  \end{tabular}
+}
+\end{table}
 
 There are two authors that are very active in the discovery of the vulnerabilities. 
 These two authors are: 
 \begin{enumerate}
-  \item Mengyuan Li \\
-  from the Ohio State University.  
-  \item Robert Buhren \\
-  from T-Lab TU  Berlin.
+  \item \textbf{Mengyuan Li} from the Ohio State University.  
+  \item \textbf{Robert Buhren} from T-Lab TU  Berlin.
 \end{enumerate}
 
 \subsection{Other Literature review sources}
+
+References found by \cite{leijonberg_viability_2021} 
+(see figure \ref{fig:classification-vulnerabilities}) are:
+
+\begin{itemize}
+\item 14  \cite{buhren_insecure_2019}
+\item 38  \cite{li_exploiting_2019}
+\item 37  \cite{li_exploiting_2019}
+\item 39  \cite{2019-werner}
+\end{itemize}
 
 \begin{figure}[!ht]
     \centering
@@ -60,18 +113,10 @@ These two authors are:
 \end{figure}
 
 
-
-\[14\]  \cite{buhren_insecure_2019}\\
-\[38\]  \cite{li_exploiting_2019}\\
-\[37\]  \cite{li_exploiting_2019}\\
-\[39\]  J. Werner, J. Mason, M. Antonakakis, M. Polychronakis, and F. Monrose, “The SEVerESt of them all: Inference attacks against secure virtual enclaves,” ser. Asia CCS ’19. Association for Computing Machinery, 2019. 
-doi: 10.1145/3321705.3329820. 
-ISBN 9781450367523 p. 73–85. [Online]. 
-Available: \url{https://doi.org/10.1145/3321705.3329820}
-
+\newpage
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.6\linewidth]{classification-vulnerabilities-2}
+    \includegraphics[width=1.1\linewidth]{classification-vulnerabilities-2}
     \caption{table with known AMD-SEV vulnerabilities  
     from \cite{li_crossline_2021}}
     \label{fig:classification-vulnerabilities-2}
@@ -82,8 +127,9 @@ Available: \url{https://doi.org/10.1145/3321705.3329820}
 
 \newpage\input{chapters/2018Morbitzer}
 
-\newpage\input{chapters/2019Li}
 \newpage\input{chapters/2019Buhren}
+\newpage\input{chapters/2019Li}
+\newpage\input{chapters/2019Werner}
 
 \newpage\input{chapters/2020Wilke}
 

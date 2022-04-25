@@ -37,7 +37,8 @@ Topics discussed in this document are:
 
 ## Quality Assurance
 The goal is to have various Subject Matter Experts (SME) review 
-(1) this document and (2) the Zotero reference library,  
+(1) this document and 
+(2) the Zotero reference library,  
 and to provide feedback via for example adding issues in the GitHub tracker.
 
 To achieve this, from a compliance viewpoint, 
@@ -56,7 +57,9 @@ updated, so this analysis should also be continuously updated.
 ## License
 The content of this document is a (re-)mix of available public sources. 
 The original authors are Maarten Baijs, Laurens Knoll and Edzo Botjes. 
-This document includes reference to these public sources. The license of this document is Creative Commons By Association 4.0. 
+This document includes reference to these public sources. 
+The license of this document is 
+[Creative Commons By Association 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 
 This implies that everybody is free to use, 
 adapt and change the content of this document 
 but needs to mention explicitly that this document is the source.
@@ -72,7 +75,7 @@ but needs to mention explicitly that this document is the source.
 [APA - Compatible reference tools](https://www.apa.org/science/about/psa/2013/12/reference-manager),
 [How to use zotero in google docs](https://www.zotero.org/support/google_docs).
 
-* This document is maintained as [Google Document](https://docs.google.com/document/d/11CT-7dBg7NQR0ziAiKCu-tyYEltH_gH-2bx-IZsZMuY/edit?usp=sharing).
+* This document is maintained as [GitHub Project](https://github.com/binxio/gcp-conf-compute-analysis).
 
 
 ### CI pipeline for LaTeX example
@@ -103,18 +106,23 @@ ou can do this via the `Makefile` and `latexmkrc` files.
 ```bash
 make clean render
 ```
+OR
 
-or 
+```bash
+make render
+```
+
+
+### Continiously Compile locally with 
 
 ```bash
 make clean render LATEXMK_OPTIONS_EXTRA=-pvc
 ```
 
-### Continiously Compile locally with 
+This runs the LaTeX compilation when a file is updated.
 
-to keep compiling the pdf when the input files are updated.
+### Continiously Refresh PDF-viewer with 
 
-To refresh the PDF continuous:
 ```bash
 evince paper/latexmk/main.pdf
 ```
@@ -195,4 +203,21 @@ that refreshes automatically when the pdf is changed.
 \usepackage[T1]{fontenc}
 %\usepackage{stix2} 
 ```
+
+# LaTeX Resources
+
+## Overall
+1. https://www.overleaf.com/learn/latex/
+
+## on Text layout
+1. https://www.overleaf.com/learn/latex/Hyperlinks
+1. https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles
+1. https://www.overleaf.com/learn/latex/Text_alignment
+1. https://tex.stackexchange.com/questions/23766/suppress-fancy-header-and-footer-on-first-page-only
+
+
+## on Tables
+1. https://tex.stackexchange.com/questions/112343/beautiful-table-samples
+1. https://tex.stackexchange.com/questions/126539/padding-at-the-top-of-a-table-cell-in-latex
+
 
