@@ -1,6 +1,7 @@
 # GCP Confidential VM & Shielded VM Analysis
 
-This repository contains the literature research on the current state
+This repository contains the literature research 
+on the current state
 of Confidential Compute at Google Cloud Platform (GCP). 
 
 ## Goal
@@ -17,7 +18,8 @@ that is the main hardware component of the Google Confidential Compute.
 
 ## use case of GCP and Confidential Compute
 The perspective of this analysis is to determine,
-the level of decoupling there can be realized between you as GCP user
+the level of decoupling there can be realized 
+between you as GCP user
 and GCP as Cloud Service Provider (GCP).
 
 A common use case for this requirement is the processing of 
@@ -37,7 +39,8 @@ Topics discussed in this document are:
 
 ## Quality Assurance
 The goal is to have various Subject Matter Experts (SME) review 
-(1) this document and (2) the Zotero reference library,  
+(1) this document and 
+(2) the Zotero reference library,  
 and to provide feedback via for example adding issues in the GitHub tracker.
 
 To achieve this, from a compliance viewpoint, 
@@ -56,7 +59,9 @@ updated, so this analysis should also be continuously updated.
 ## License
 The content of this document is a (re-)mix of available public sources. 
 The original authors are Maarten Baijs, Laurens Knoll and Edzo Botjes. 
-This document includes reference to these public sources. The license of this document is Creative Commons By Association 4.0. 
+This document includes reference to these public sources. 
+The license of this document is 
+[Creative Commons By Association 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 
 This implies that everybody is free to use, 
 adapt and change the content of this document 
 but needs to mention explicitly that this document is the source.
@@ -104,6 +109,7 @@ ou can do this via the `Makefile` and `latexmkrc` files.
 ```bash
 make clean render
 ```
+OR
 
 ### Continiously Compile locally with 
 
@@ -114,15 +120,16 @@ to keep compiling the pdf when the input files are updated.
 make clean render LATEXMK_OPTIONS_EXTRA=-pvc
 ```
 
-### Continiously refresh PDF 
+### Continiously Refresh PDF-viewer with 
 
-To refresh the PDF continuous:
+This runs the PDF viewer 
+[Evince](https://wiki.gnome.org/Apps/Evince) 
+that refreshes.
+
 ```bash
 evince paper/latexmk/main.pdf
 ```
-
-This runs the PDF viewer [Evince](https://wiki.gnome.org/Apps/Evince) 
-that refreshes automatically when the pdf is changed. 
+ automatically when the pdf is changed. 
 
 ## Documentation Conventions
 1. Every sentence around 7 words.
@@ -134,19 +141,16 @@ that refreshes automatically when the pdf is changed.
 1. All figures should have transparent background color.
 
 ## Backlog
-1. Select Open Font (default roboto)
-1. add organization, email, orcid and communicating to authors
-1. migrate content from google doc to latex
-1. copy references from Zotero to bib file
-1. setup/ reserve an DOI in Zenodo
-1. move backlog to github 
-1. refactor gitlab-ci to github actions
-1. adjust latex template design based on Binx based on Xebia
+1. Update authors information (org).
+1. Setup/ reserve an DOI in Zenodo for this doc.
+1. Move backlog to github .
+1. Refactor gitlab-ci to github actions.
+1. Adjust latex template design based on Binx based on Xebia.
   1. Rotate whitepaper to landscape
-1. use latex tooling (TODO EDZO) to fix abbreviation and glossary
 
-### Font
+### Fonts
 * The google font familiy is well supported in LaTeX, new and free to use.
+* Currently this document is using the Noto font.
 
 #### Noto
 * The Noto font is part of google font familiy and has extensive math and unicode support
@@ -198,3 +202,18 @@ that refreshes automatically when the pdf is changed.
 %\usepackage{stix2} 
 ```
 
+# LaTeX Resources
+
+## Overall
+1. https://www.overleaf.com/learn/latex/
+
+## on Text layout
+1. https://www.overleaf.com/learn/latex/Hyperlinks
+1. https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles
+1. https://www.overleaf.com/learn/latex/Text_alignment
+1. https://tex.stackexchange.com/questions/23766/suppress-fancy-header-and-footer-on-first-page-only
+
+
+## on Tables
+1. https://tex.stackexchange.com/questions/112343/beautiful-table-samples
+1. https://tex.stackexchange.com/questions/126539/padding-at-the-top-of-a-table-cell-in-latex

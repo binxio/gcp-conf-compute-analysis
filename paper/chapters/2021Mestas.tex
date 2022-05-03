@@ -1,0 +1,14 @@
+%!TEX root = ../main.tex
+
+\subsection{\cite{mestas_exploitation_2021} - Exploitation and Mitigation of CPU Vulnerabilities}
+
+\textbf{Exploitation and Mitigation of CPU Vulnerabilities}
+
+\url{https://ir.library.oregonstate.edu/downloads/fj2369045}
+
+\subsubsection*{Abstract \cite{mestas_exploitation_2021}}
+“AMD SEV allows for the creation of fully encrypted virtual machines. This allows cloud computing tenants’ data to be secret to the cloud computing provider. However, it has been shown that the encryption scheme used by AMD can easily be broken. The attacker can create a copy of the virtual machine, and perform some malicious operations to gain a secret value used in the encryption scheme. They can then use this value to write and read encrypted data to and from the target virtual machine. To prevent this, we propose wrapping the insecure encryption scheme with a stronger encryption scheme. We developed a proof of concept kernel module that implements secure encryption between the user and kernel space. In addition, we discuss other CPU vulnerabilities and their potential impacts. We look at copy-on-write based side channel attacks, and introduce a method for optimizing them through making use of new CPU instructions. Also, we survey other CPU side channel attacks, and present some examples of these attacks.”
+
+\subsubsection*{Conclusion \cite{mestas_exploitation_2021}}
+“In this work, we described previous work that showed a malicious hypervisor can arbitrarily read and write private data inside of an AMD SEV protected VM. We also developed a software defense against this attack, and implemented a proof of concept of the defense. Additionally, we showed how COW based side channel attacks can be optimized through the usage of transactional memory operations on both x86 and ARM CPUs. Finally, we discussed and implemented proof of concepts for various other categories of side channel attacks. Our work has surveyed various categories of CPU vulnerabilities, and presented a defense to one vulnerability as well as an optimization to another.”
+

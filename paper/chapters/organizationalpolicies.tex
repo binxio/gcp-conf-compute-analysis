@@ -1,0 +1,25 @@
+%!TEX root = ../main.tex
+
+\section{GCP Organizational Policies}
+%\addcontentsline{toc}{section}{GCP Organizational Policies}
+
+
+The Organization Policy Service gives you 
+centralized and programmatic control over your organization's cloud resources. 
+As the organization policy administrator, 
+you will be able to configure constraints across your entire resource hierarchy. 
+
+These policies can be applied for individual projects.
+
+\textbf{constraints/compute.requireShieldedVm}\\
+This boolean constraint, when set to True, 
+requires that all new Compute Engine VM instances use Shielded disk images 
+with Secure Boot, vTPM, and Integrity Monitoring options enabled.
+
+\textbf{constraints/compute.restrictNonConfidentialComputing}\\
+The deny list of this list constraint defines the set of services 
+that require all new resources to be created with Confidential Computing enabled.
+By default, new resources are not required to use Confidential Computing. 
+While this list constraint is enforced, 
+Confidential Computing cannot be disabled 
+throughout the lifecycle of the resource.

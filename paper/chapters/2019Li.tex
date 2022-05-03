@@ -1,0 +1,12 @@
+%!TEX root = ../main.tex
+
+\subsection{\cite{li_exploiting_2019} - Exploiting Unprotected I/O Operations in AMD’s Secure Encrypted Virtualization }
+
+\textbf{Exploiting Unprotected I/O Operations in AMD’s Secure Encrypted Virtualization }
+
+\subsubsection*{Abstract  \cite{li_exploiting_2019}}
+“AMD’s Secure Encrypted Virtualization (SEV) is an emerging technology to secure virtual machines (VM) even in the presence of malicious hypervisors. However, the lack of trust in the privileged software also introduces an assortment of new attack vectors to SEV-enabled VMs that were mostly unexplored in the literature. This paper studies the insecurity of SEV from the perspective of the unprotected I/O operations in the SEV-enabled VMs. The results are alerting: not only have we discovered attacks that breach the confidentiality and integrity of these I/O operations—which we find very difficult to mitigate by existing approaches—but more significantly we demonstrate the construction of two attack primitives against SEV’s memory encryption schemes, namely a memory decryption oracle and a memory encryption oracle, which enables an adversary to decrypt and encrypt arbitrary messages using the memory encryption keys of the VMs. We evaluate the proposed attacks and discuss potential solutions to the underlying problems.” 
+
+\subsubsection*{Conclusion  \cite{li_exploiting_2019}}
+“In this paper, we have reported our study of the insecurity of SEV from the perspective of the unprotected I/O operations in SEV-enabled VMs. The results of our study are two fold: First, I/O operations from SEV guests are not secure; second, I/O operations can be used by the adversary to construct memory encryption and decryption oracles. The concrete attacks have been demonstrated in the paper, along with discussion of potential solutions to the underlying problems.”
+

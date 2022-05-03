@@ -1,0 +1,156 @@
+%!TEX root = ../main.tex
+
+\section*{Confidential Compute - Known Vulnerabilities}
+\addcontentsline{toc}{section}{Confidential Compute - Known Vulnerabilities}
+
+This table is in addition to the table provided bij AMD previously mentioned.
+This table only includes the literature mentioned in this chapter. 
+The main conclusion is that the known vulnerabilities 
+are to be mitigated in the SEV-SNP. 
+The development team of AMD is really transparent on the found vulnerabilities 
+and in many papers thanked for their collaboration 
+on confirming the found vulnerabilities. 
+
+\begin{table}[ht]
+\label{lit}
+
+\caption{Found literate on known vulnerabilities AMD EPYC confidential compute}
+\centering
+{
+\footnotesize
+  \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+    \hline
+     & \textbf{SEV} 
+     & \textbf{SEV-ES} 
+     & \textbf{SEV-SNP}\\
+    \hline
+
+    \textbf{to be sorted} 
+    & \begin{minipage}[t]{7cm}
+        \cite{hetzelt_security_2017}\\
+        \cite{du_secure_2017} \\
+        \cite{li_tlb_2021}
+      \end{minipage}
+    & \cite{li_tlb_2021} 
+    & 
+    \\
+
+    \textbf{Physical attacks} 
+    & \begin{minipage}[t]{7cm}
+        \cite{li_exploiting_2019} \\
+        \cite{buhren_insecure_2019} \\
+        \cite{buhren_one_2021}
+      \end{minipage}
+    & \begin{minipage}[t]{7cm}
+        \cite{wilke_sevurity_2020}\\
+        \cite{buhren_one_2021} 
+      \end{minipage}
+    & \cite{buhren_one_2021}
+    \\
+
+    \textbf{Software attacks} 
+    & \begin{minipage}[t]{7cm}
+        \cite{morbitzer_severed_2018} \\
+        \cite{2019-werner}\\
+        \cite{hetzelt_via_2021}
+      \end{minipage}
+    & \begin{minipage}[t]{7cm}
+        \cite{2019-werner}\\
+        \cite{hetzelt_via_2021} 
+       \end{minipage}
+    & 
+    \\
+
+    \textbf{Side-channel attacks} 
+    & \begin{minipage}[t]{7cm}
+        \cite{li_crossline_2021}\\ 
+        \cite{li_cipherleaks_2021}\\ 
+        \cite{mestas_exploitation_2021} 
+      \end{minipage}
+    & \begin{minipage}[t]{7cm}
+        \cite{li_crossline_2021}\\
+        \cite{li_cipherleaks_2021}\\
+        \cite{mestas_exploitation_2021} 
+      \end{minipage}
+    & 
+    \\
+
+    \textbf{Denial-of-service attacks} 
+    & 
+    & 
+    & 
+    \\
+    \hline
+
+  \end{tabular}
+}
+\end{table}
+
+There are two authors that are very active in the discovery of the vulnerabilities. 
+These two authors are: 
+\begin{enumerate}
+  \item \textbf{Mengyuan Li} from the Ohio State University.  
+  \item \textbf{Robert Buhren} from T-Lab TU  Berlin.
+\end{enumerate}
+
+The abstract and the conclusion of each of the entries of tabel \ref{lit}
+are included in the following sections.
+
+The conclusion of the found literature can be found in the summary (\ref{summary}) of this document.
+
+\newpage
+\subsection{Academic Literature researches on AMD SEV}
+
+\subsubsection{References found by \cite{2019-werner} }
+
+TODO:  insert table insert data
+
+\subsubsection{References found by \cite{leijonberg_viability_2021} }
+
+\begin{itemize}
+\item 14  \cite{buhren_insecure_2019}
+\item 38  \cite{li_exploiting_2019}
+\item 37  \cite{li_exploiting_2019}
+\item 39  \cite{2019-werner}
+\end{itemize}
+See figure \ref{fig:classification-vulnerabilities}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.6\linewidth]{classification-vulnerabilities}
+    \caption{table with known AMD-SEV vulnerabilities  
+    from \cite{leijonberg_viability_2021}}
+    \label{fig:classification-vulnerabilities}
+\end{figure}
+
+
+\subsubsection{References found by \cite{li_crossline_2021} }
+TODO:  insert data
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1.1\linewidth]{classification-vulnerabilities-2}
+    \caption{table with known AMD-SEV vulnerabilities  
+    from \cite{li_crossline_2021}}
+    \label{fig:classification-vulnerabilities-2}
+\end{figure}
+
+\newpage\input{chapters/2017Du}
+\newpage\input{chapters/2017Hetzelt}
+
+\newpage\input{chapters/2018Morbitzer}
+
+\newpage\input{chapters/2019Buhren}
+\newpage\input{chapters/2019Li}
+\newpage\input{chapters/2019Werner}
+
+\newpage\input{chapters/2020Wilke}
+
+\newpage\input{chapters/2021Buhren}
+\newpage\input{chapters/2021Hetzelt}
+\newpage\input{chapters/2021Li}
+\newpage\input{chapters/2021Li-c}
+\newpage\input{chapters/2021Li-b}
+\newpage\input{chapters/2021Maarouf}
+\newpage\input{chapters/2021Mestas}

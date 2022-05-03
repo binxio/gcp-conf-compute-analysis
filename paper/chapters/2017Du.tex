@@ -1,0 +1,11 @@
+%!TEX root = ../main.tex
+
+\subsection{\cite{du_secure_2017} - Secure Encrypted Virtualization is Unsecure}
+
+\textbf{Secure Encrypted Virtualization is Unsecure}
+
+\subsubsection*{Abstract \cite{du_secure_2017}}
+“Virtualization has become more important since cloud computing is getting more and more popular than before. There’s an increasing demand for security among the cloud customers. AMD plans to provide Secure Encrypted Virtualization (SEV)[8] technology in its latest processor EPYC to protect virtual machines by encrypting its memory but without integrity protection. In this paper, we analyzed the weakness in the SEV design due to lack of integrity protection thus it is not so secure. Using different design flaw in physical address-based tweak algorithm to protect against ciphertext block move attacks, we found a realistic attack against SEV which could obtain the root privilege of an encrypted virtual machine protected by SEV. A demo to simulate the attack against a virtual machine protected by SEV is done in a Ryzen machine which supports Secure Memory Encryption (SME)[8] technology since SEV enabled machine is still not available in market.“
+
+\subsubsection*{Conclusion \cite{du_secure_2017}}
+“In this paper, we have demonstrated that the current implementation of SEV is vulnerable. We suggest AMD to update the physical address-based tweak algorithm before releasing SEV into market. The physical address-based tweak algorithm should not tweak the address into plaintexts or cipher-texts. The address should be tweaked into key of AES algorithm to protect against cipher-text move attacks. It is preferred that Key Derivation Function such as the one specified in NIST SP 800-108 [24] should be used to tweak the address into the key. Encryption is not enough to isolate VMs from hypervisor and it is better that integrity protection could also be provided. The idea to provide a technology to isolate data of guest VM from hypervisor is promising, but there’re still a lot of improvement opportunities in the current implementation.“

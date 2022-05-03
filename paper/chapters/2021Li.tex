@@ -1,0 +1,13 @@
+%!TEX root = ../main.tex
+
+\subsection{\cite{li_crossline_2021} - CrossLine: Breaking "Security-by-Crash" based Memory Isolation in AMD SEV}
+
+\textbf{CrossLine: Breaking "Security-by-Crash" based Memory Isolation in AMD SEV} 
+
+\subsubsection*{Abstract \cite{li_crossline_2021}}
+“AMD’s Secure Encrypted Virtualization (SEV) is an emerging security feature of modern AMD processors that allows virtual machines to run with encrypted memory and perform confidential computing even with an untrusted hypervisor. This paper first demystifies SEV’s improper use of address space identifier (ASID) for controlling accesses of a VM to encrypted memory pages, cache lines, and TLB entries. We then present the CrossLine attacks1 , a n{}ovel class of attacks against SEV that allow the adversary to launch an attacker VM and change its ASID to that of the victim VM to impersonate the victim. We present two variants of CrossLine attacks: CrossLine V1 decrypts victim’s page tables or any memory blocks conforming to the format of a page table entry; CrossLine V2 constructs encryption and decryption oracles by executing instructions of the victim VM. We discuss the applicability of CrossLine attacks on AMD’s SEV, SEV-ES, and SEV-SNP processors.”
+
+\subsubsection*{Conclusion \cite{li_crossline_2021}}
+“In conclusion, this paper demystifies AMD SEV’s ASID-based isolation for encrypted memory pages, cache lines, and TLB entries. For the first time, it challenges the “security-by-crash” design philosophy taken by AMD. It also proposes the CrossLine attacks, a novel class of attacks against SEV that allow the adversary to launch an attacker VM and change its ASID to that of the victim VM to impersonate the victim. Two variants of CrossLine attacks have been presented and successfully demonstrated on SEV machines. They are the first SEV attacks that do not rely on SEV’s memory integrity flaws.” 
+
+

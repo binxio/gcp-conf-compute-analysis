@@ -1,0 +1,37 @@
+%!TEX root = ../main.tex
+
+\section{GCP Combining encryption to Confidential Compute and External HSM}
+%\addcontentsline{toc}{section}{GCP Combining encryption to Confidential Compute and External HSM}
+
+
+
+Google extends the External Key Management\footnote{\url{https://cloud.google.com/blog/products/identity-security/hold-your-own-key-with-google-cloud-external-key-manager}}\textsuperscript{,}\footnote{\url{https://services.google.com/fh/files/misc/protecting_data_with_googlecloud_ekm.pdf}}
+support with the use case of Ubiquitous Data Encryption\footnote{\url{ https://cloud.google.com/compute/confidential-vm/docs/ubiquitous-data-encryption}}\textsuperscript{,}\footnote{\url{ https://cloud.google.com/blog/products/identity-security/ubiquitous-data-encryption-on-google-cloud}} (UDE).  
+
+UDE combines\footnote{\url{ https://cloud.google.com/compute/confidential-vm/docs/ubiquitous-data-encryption}} the external Key Manager 
+via the CipherTrust Cloud Key manager product 
+with the confidential compute service. 
+This way you can limit access of the encrypted data in the Google Cloud 
+(via the keys in the Google Key Vault), 
+to verified confidential VM’s. 
+Thales\footnote{\url{https://cpl.thalesgroup.com/blog/encryption/google-ubiquitous-data-encryption-ekm }} 
+is the launching partner of this capability 
+but other HSM providers also (will) follow.
+
+Google highlights the following three use cases.
+
+\begin{quote}
+“\textbf{Confidential computing required for decryption and encryption}: 
+A data encryption key (DEK) generated within a GCP confidential VM is wrapped by a CCKM key encryption key (KEK). Key unwrapping and data access is possible only by an attested, confidential VM.
+Confidential computing required only for decryption: a DEK may be generated on-premises, then wrapped by a CCKM KEK. Data encrypted with the DEK is uploaded to Google Cloud. If confidential computing is required for the DEK to be decrypted, there is assurance that data access is only allowed by a verified confidential VM.
+
+\textbf{Confidential computing required only for encryption}: A DEK generated within a GCP confidential VM is then wrapped by a CCKM KEK. In the cloud, use of the unwrapped DEK is possible only by an attested, verified confidential VM. However, if the data is migrated from cloud to on premises, unwrapping may be permitted by a non-confidential computing environment, while retaining the assurance that data originated in a confidential VM.
+
+\textbf{Confidential computing not required}: A DEK may be generated on- premises in a non-confidential environment and wrapped by a CCKM KEK. The data moves to another regular environment (on cloud or on-premises). Key unwrapping and hence data access is possible in a second regular environment but only with access to and permission from CCKM.” 
+\end{quote}
+
+This is a complexity to setup and adds extra isolution 
+between the various VM’s you might be running. 
+This will also increase the difficulty of data being exposed via the CCKM. 
+This extra layer of security is still exposed to vulnerabilities 
+in the confidential compute CPU scope.

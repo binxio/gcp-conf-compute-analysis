@@ -1,22 +1,39 @@
 \documentclass[10pt, a4paper]{article}
 
-\include{./packages.tex} % include setting for this paper
-\include{./title.tex} % include paper title and header/footer config
+\input{./packages.tex} % include setting for this paper
+\input{./title.tex} % include paper title and header/footer config
 
 \begin{document}
-    \date{\today}
-    \maketitle
 
-    \input{chapters/abstract.tex}
+    \thispagestyle{empty}
+    \begin{center}
+        {\Huge \gcpTitle}
+        {\large \\\gcpResearchTitle}
+        {\large \\Edzo Botjes\footnote{\url{ebotjes@xebia.com}}, 
+        Laurens Knoll\footnote{\url{laurensknoll@binx.io}}, 
+        Maarten Baijs\footnote{\url{maartenbaijs@binx.io}}}
+        %{\large \\From Binx.io and Xebia - Security, the Netherlands}
+    \end{center}
+
+    %\input{chapters/abstract.tex}
     \input{chapters/introduction.tex}
-    \input{chapters/summary.tex}
-    \input{chapters/about.tex}
-
-    \input{chapters/abbreviations.tex}
+    \include{chapters/summary.tex}
     
+    \newpage
+    {\footnotesize\tableofcontents}
 
-    \input{chapters/conclusion.tex}
-    \input{chapters/acknowledgment.tex}
+    \include{chapters/about.tex}
+    \include{chapters/abbreviations.tex}
+    \include{chapters/titan.tex}
+    \include{chapters/shieldedvm.tex}
+    \include{chapters/confidentialvm.tex}
+    \input{chapters/integritymonitoring.tex}
+    \input{chapters/organizationalpolicies.tex}
+    \include{chapters/externalhsm.tex}
+    \include{chapters/threatanalysis.tex}
+    \include{chapters/knownvulnerabilities}
+    %\include{chapters/conclusion.tex}
+    %\include{chapters/acknowledgment.tex}
 
-    {\footnotesize \bibliography{Confidential Compute}}
+    {\footnotesize \bibliography{conf}}
 \end{document}
