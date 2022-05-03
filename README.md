@@ -72,7 +72,8 @@ but needs to mention explicitly that this document is the source.
 [APA - Compatible reference tools](https://www.apa.org/science/about/psa/2013/12/reference-manager),
 [How to use zotero in google docs](https://www.zotero.org/support/google_docs).
 
-* This document is maintained as [Google Document](https://docs.google.com/document/d/11CT-7dBg7NQR0ziAiKCu-tyYEltH_gH-2bx-IZsZMuY/edit?usp=sharing).
+* This document **was** maintained as [Google Document](https://docs.google.com/document/d/11CT-7dBg7NQR0ziAiKCu-tyYEltH_gH-2bx-IZsZMuY/edit?usp=sharing) 
+before but is now maintained on github.
 
 
 ### CI pipeline for LaTeX example
@@ -104,15 +105,16 @@ ou can do this via the `Makefile` and `latexmkrc` files.
 make clean render
 ```
 
-or 
+### Continiously Compile locally with 
+
+to keep compiling the pdf when the input files are updated.
+ 
 
 ```bash
 make clean render LATEXMK_OPTIONS_EXTRA=-pvc
 ```
 
-### Continiously Compile locally with 
-
-to keep compiling the pdf when the input files are updated.
+### Continiously refresh PDF 
 
 To refresh the PDF continuous:
 ```bash
