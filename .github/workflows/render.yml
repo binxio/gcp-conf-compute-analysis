@@ -1,0 +1,30 @@
+name: render
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Setup Python 3.8
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+      - name: Render figures
+        run: make
+        working-directory: paper/figures
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: paper
+          root_file: main.tex
+          compiler: latexmk
+          args: -cd -view=none -output-directory=latexmk -output-format=pdf -interaction=nonstopmode
+      - name: Archive LaTeX document
+        uses: actions/upload-artifact@v3
+        with:
+          name: paper
+          path: paper/latexmk/*.pdf
