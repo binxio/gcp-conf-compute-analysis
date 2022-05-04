@@ -1,10 +1,10 @@
-name: release
+name: render
 on:
-  push:
-    tags:
-      - v*
+  pull_request:
+    branches:
+      - main
 jobs:
-  release:
+  render:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -23,7 +23,8 @@ jobs:
           root_file: main.tex
           compiler: latexmk
           args: -cd -view=none -output-directory=latexmk -output-format=pdf -interaction=nonstopmode
-      - name: Release LaTeX document
-        uses: softprops/action-gh-release@v1
+      - name: Archive LaTeX document
+        uses: actions/upload-artifact@v3
         with:
-          files: paper/latexmk/*.pdf
+          name: paper
+          path: paper/latexmk/*.pdf
