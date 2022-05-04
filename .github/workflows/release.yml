@@ -1,0 +1,28 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+      - actions-dev
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Setup Python 3.8
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+      - name: Render figures
+        run: make
+        working-directory: paper/figures
+      - name: Compile LaTeX document
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: make pdf
+      - name: Archive LaTeX document
+        uses: actions/upload-artifact@v3
+        with:
+          name: paper
+          path: paper/latexmk/main.pdf
