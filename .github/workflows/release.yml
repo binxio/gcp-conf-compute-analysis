@@ -23,7 +23,7 @@ jobs:
           working_directory: paper
           root_file: main.tex
           compiler: latexmk
-          args: -output-format=pdf -pdf -interaction=nonstopmode
+          args: -cd -view=none -output-directory=latexmk -output-format=pdf -interaction=nonstopmode
       - name: Archive LaTeX document
         uses: actions/upload-artifact@v3
         with:
